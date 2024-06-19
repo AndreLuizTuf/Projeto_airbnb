@@ -15,8 +15,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  username: postgres
+  password: 230622
+  host: localhost
+  port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 
@@ -27,10 +29,3 @@ development:
 test:
   <<: *default
   database: airbnb_test
-
-
-production:
-  <<: *default
-  database: airbnb_production
-  username: airbnb
-  password: <%= ENV["AIRBNB_DATABASE_PASSWORD"] %>
