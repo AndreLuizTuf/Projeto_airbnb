@@ -108,3 +108,5 @@ yarn-debug.log*
 .DS_Store
 
 Ruby on Rails 2024 - Airbnb clone - HTML CSS Javascript, Tailwind, Ruby, Rails, PostgreSQL
+/app/assets/builds/*
+!/app/assets/builds/.keep
