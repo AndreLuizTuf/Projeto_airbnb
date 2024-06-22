@@ -5,6 +5,7 @@ MoneyRails.configure do |config|
   # To set the default currency
   #
   config.default_currency = :usd
+  Money.rounding_mode = BigDecimal::ROUND_HALF_EVEN
 
   # Set default bank object
   #
