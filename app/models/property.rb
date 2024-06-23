@@ -15,11 +15,17 @@ class Property < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
 
-  has_many :wishilists, dependent: :destroy
-  has_many :wishilisted_users, through: :wishilist, source: :user, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
+  has_many :wishlisted_users, through: :wishlists, source: :user, dependent: :destroy
 
   def update_average_rating
     average_rating = reviews.average(:final_rating).to_f
     update_column(:average_final_rating, average_rating)
   end
+
+  def wishlisted_by?(user = nil)
+    return if user.nil?
+
+    wishlisted_users.include?(user)
+  end 
 end

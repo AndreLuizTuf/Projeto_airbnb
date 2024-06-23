@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :wishilists, dependent: :destroy
-  has_many :wishilisted_properties, through: :wishilist, source: :property, dependent: :destroy
+  has_many :wishilisted_properties, through: :wishlists, source: :property, dependent: :destroy
 end

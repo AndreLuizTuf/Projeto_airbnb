@@ -1,20 +1,20 @@
 module Api
-    class WishilistsController < ApplicationController
+    class WishlistsController < ApplicationController
       protect_from_forgery with: :null_session
       # CRUD criar e delete
       def create
-        wishilist = Wishilist.create!(wishilist_params)
+        wishlist = Wishilist.create!(wishlist_params)
 
         respond_to do |format|
           format.json do
-            render json: wishilist.to_json, status: :ok
+            render json: wishlist.to_json, status: :ok
           end
         end
       end
 
       def destroy
-        wishilist = Wishilist.find(params[:id])
-        wishilist.destroy
+        wishlist = Wishilist.find(params[:id])
+        wishlist.destroy
 
         respond_to do |format|
           format.json do

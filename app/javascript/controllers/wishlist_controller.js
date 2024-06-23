@@ -3,11 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
 
   updateWishlistStatus() {
-
-    // GET status if user é login
-    // If logout, redirect do login página, return
-    // else continue
-
     const isUserLoggedIn = this.element.dataset.userLoggedIn;
     if(isUserLoggedIn === "false"){
       document.querySelector(".js-login").click();
