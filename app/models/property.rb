@@ -27,5 +27,5 @@ class Property < ApplicationRecord
     return if user.nil?
 
     wishlisted_users.include?(user)
-  end 
+  end
 end

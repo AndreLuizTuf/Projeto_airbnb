@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :api do
-    resources :wishilists, only: [:create, :destroy] 
+    resources :wishlists, only: [:create, :destroy] 
   end
 end
