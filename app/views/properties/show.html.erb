@@ -258,7 +258,7 @@
         </form>
       </div>
 
-      <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+      <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pr-8>
         <!-- Description and details -->
         <div class="border-t border-gray-200 pt-10 mt-4">
           <h3 class="sr-only">Description</h3>
@@ -271,9 +271,10 @@
                 <svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 12px; width: 12px; display: block; fill: var(--f-k-smk-x);"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"></path></svg>
               </div>
             <% end %>
-          </div>
         </div>
       </div>      
+      <!-- Amenities -->
+      <%= render :partial => 'properties/amenities', :locals => {:amenities => @property.amenities} %>      
     </div>
      <!-- Reviews -->
     <%= render :partial => 'properties/reviews', :locals => {:property => @property} %>          
