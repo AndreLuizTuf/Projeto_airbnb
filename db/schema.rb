@@ -86,6 +86,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_06_30_154048) do
     t.bigint "amenity_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["amenity_id", "property_id"], name: "index_property_amenities_on_amenity_id_and_property_id", unique: true
     t.index ["amenity_id"], name: "index_property_amenities_on_amenity_id"
     t.index ["property_id"], name: "index_property_amenities_on_property_id"
   end

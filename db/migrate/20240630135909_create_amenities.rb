@@ -6,6 +6,7 @@ class CreateAmenities < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
+    
     add_index :amenities, :name, unique: true
   end
 end
