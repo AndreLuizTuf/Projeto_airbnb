@@ -16,6 +16,7 @@ gem "rails", "~> 7.2.0.beta2"
 gem "redis", "~> 4.0"
 gem "sprockets-rails"
 gem "stimulus-rails"
+gem 'stripe-rails'
 gem "tailwindcss-rails", "~> 2.6"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -23,6 +24,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem 'dotenv'
 end
 
 group :development do
