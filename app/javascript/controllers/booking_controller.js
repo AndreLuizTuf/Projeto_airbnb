@@ -81,13 +81,13 @@ export default class extends Controller {
     e.preventDefault();
 
     const paramsData = {
-      checkin_date: "05-07-2024",
-      checkout_date: "07-07-2024",
+      checkin_date: this.checkinTarget.value,
+      checkout_date: this.checkoutTarget.value,
     }
 
     const paramsURL = (new URLSearchParams(paramsData)).toString();
 
     const baseURL = e.target.dataset.reservePropertyUrl;
-    Turbo.visit(`${baseURL}?${paramsURL}`)
+    Turbo.visit(`${baseURL}?${paramsURL}`);
   }
 }
