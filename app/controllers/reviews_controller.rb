@@ -4,7 +4,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = current_user.reviews.new(review_params.merge(property_id: @reservation.property_id))
+    # TODO: Visit this url directly and check that if review has already been added it shows 404 or redirects back.
+    @review = current_user.reviews.new(
+      review_params.merge(
+        property_id: @reservation.property_id,
+        reservation_id: @reservation.id
+      )
+    )
 
     if @review.save
       redirect_to root_path, notice: 'Review added successfully'
@@ -21,7 +27,6 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.permit(
-      :user_id,
       :content,
       :cleanliness_rating,
       :accuracy_rating,
