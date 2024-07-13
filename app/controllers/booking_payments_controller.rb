@@ -33,7 +33,8 @@ class BookingPaymentsController < ApplicationController
   
   def success
     booking_params = params[:booking_params]
-
+    
+    property = Property.find(booking_params[:property_id])
     reservation = Reservation.create!(
       user_id: current_user.id,
       property_id: booking_params[:property_id],
@@ -41,8 +42,9 @@ class BookingPaymentsController < ApplicationController
       checkout_date: booking_params[:checkout_date]
     )
 
-    payment = Payment.create!(
+    Payment.create!(
       reservation_id: reservation.id,
+      per_night: property.price,
       base_fare: Money.from_amount(BigDecimal(booking_params[:base_fare])),
       service_fee: Money.from_amount(BigDecimal(booking_params[:service_fee])),
       total_amount: Money.from_amount(BigDecimal(booking_params[:total_amount])),

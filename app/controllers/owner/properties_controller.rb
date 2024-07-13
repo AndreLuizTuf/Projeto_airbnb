@@ -14,7 +14,7 @@ module Owner
     end
 
     def index
-      @properties = current_user.properties
+      @properties = current_user.properties.order(created_at: :desc)
     end
 
     def update

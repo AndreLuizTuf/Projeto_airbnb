@@ -12,8 +12,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <%# TODO: Optimise this imports %>
-    <%= stripe_javascript_tag %>
+    <% if controller_name == 'booking_payments' && action_name == 'create'%>
+      <%= stripe_javascript_tag %>
+    <% end %>
     
      <link
       rel="stylesheet"
