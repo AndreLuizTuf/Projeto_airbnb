@@ -6,9 +6,7 @@ export default class extends Controller {
   }
 
   toggleModal(){
-    const modalTriggerId = this.element.dataset.modalTriggerId;
-    console.log("modalTriggerId: ", modalTriggerId)
-    console.log("wrapper: " + document.getElementById(`modal-${modalTriggerId}-wrapper`))
+    const modalTriggerId = this.element.dataset.modalTriggerId;    
     toggle(document.getElementById(`modal-${modalTriggerId}-wrapper`));
   }
 }
