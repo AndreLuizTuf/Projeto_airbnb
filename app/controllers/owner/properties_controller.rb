@@ -3,6 +3,16 @@ module Owner
     before_action :authenticate_user!
     before_action :set_property, only: [:edit, :update, :update_amenities, :add_images, :remove_image, :destroy]
 
+    def new
+      @property = Property.new
+    end
+
+    def create
+      @property = current_user.properties.create!(property_params)
+
+      redirect_to edit_owner_property_path(@property), notice: 'Property added successfully'
+    end
+
     def index
       @properties = current_user.properties
     end
@@ -53,7 +63,7 @@ module Owner
       params.require(:property).permit(
         :name,
         :price,
-        :headine,
+        :headline,
         :description,
         :address_1,
         :address_2,
