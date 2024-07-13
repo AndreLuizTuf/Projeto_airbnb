@@ -32,6 +32,7 @@
           <span class="sr-only">Open menu</span>
           <!--
             Icon when menu is closed.
+
             Menu open: "hidden", Menu closed: "block"
           -->
           <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -39,6 +40,7 @@
           </svg>
           <!--
             Icon when menu is open.
+
             Menu open: "block", Menu closed: "hidden"
           -->
           <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -69,16 +71,6 @@
               <% end %>
             </button>
           </div>
-
-          <!--
-            Dropdown menu, show/hide based on menu state.
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          -->
           <div
             data-header-target="dropdown" 
             data-transition-enter="transition ease-out duration-100"
@@ -95,14 +87,14 @@
           >
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <% if user_signed_in? %>
-              <%= link_to "Account", edit_profile_path, class:"block px-4 py-2 text-sm text-gray-700", role:"menuitem", tabindex:"-1" %>
+              <%= link_to "Account", edit_profile_path , class:"block px-4 py-2 text-sm text-gray-700", role:"menuitem", tabindex:"-1" %>
               <%= link_to "Dashboard", owner_reservations_path, class:"block px-4 py-2 text-sm text-gray-700", role:"menuitem", tabindex:"-1" %>
-              <%= link_to "Wishilist", wishlists_path, class:"block px-4 py-2 text-sm text-gray-700", role:"menuitem", tabindex:"-1" %>
+              <%= link_to "Wishlist", wishlists_path, class:"block px-4 py-2 text-sm text-gray-700", role:"menuitem", tabindex:"-1" %>
               <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class:"block px-4 py-2 text-sm text-gray-700", role:"menuitem", tabindex:"-1" %>
             <% else %>
               <%= link_to "Log in", new_user_session_path, class:'js-login block px-4 py-2 text-sm text-gray-700', role:"menuitem", tabindex:"-1" %>
               <%= link_to "Sign up", new_user_registration_path, class:'block px-4 py-2 text-sm text-gray-700', role:"menuitem", tabindex:"-1" %>
-            <% end %>   
+            <% end %>
           </div>
         </div>
       </div>

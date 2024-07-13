@@ -8,7 +8,7 @@
   </button>
   <div class="py-6">
     <h2 class="text-xl font-medium leading-6 text-gray-900">What this place offers</h2>
-     <div class="mt-6 grid grid-cols-1 gap-2">
+    <div class="mt-6 grid grid-cols-1 gap-2">
       <% content_params[:amenities].limit(8).each do|amenity| %>
         <%= render 'properties/amenity_item', amenity: amenity %>
         <div class="inset-0 flex items-center py-1" aria-hidden="true">
