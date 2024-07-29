@@ -11,7 +11,7 @@ gem "image_processing", ">= 1.2"
 gem "importmap-rails"
 gem "jbuilder"
 gem 'money-rails', '~> 1.12'
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.5"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.0.beta2"
 gem "redis", "~> 4.0"
