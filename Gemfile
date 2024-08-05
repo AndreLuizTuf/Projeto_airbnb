@@ -18,7 +18,7 @@ gem "redis", "~> 4.0"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem 'stripe-rails'
-gem "tailwindcss-rails", "~> 2.6"
+gem "tailwindcss-rails", "~> 2.7"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
